@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+development:
+  <<: *default
+  database: public_comics_development
+
+test:
+  <<: *default
+  database: public_comics_test
+
+production:
+  <<: *default
+  database: public_comics_production
+  username: public_comics
+  password: <%= ENV['EXAMPLE_DATABASE_PASSWORD'] %>
